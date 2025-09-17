@@ -70,6 +70,29 @@ namespace laba_11
             DrawTriangle(tr);
         }
 
+        private void DrawRectangle(object sender, RoutedEventArgs e)
+        {
+            DrawRectangle(rc);
+        }
+
+        private void Slider_ValueChanged_1(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            double i = e.OldValue - e.NewValue;
+            Scene.Children.Clear();
+            rc.addX((int)(i * -100));
+            DrawRectangle(rc);
+
+        }
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            double i = e.OldValue - e.NewValue;
+            Scene.Children.Clear();
+            rc.addY((int)(i*-100));
+            DrawRectangle(rc);
+
+        }
+
+        
     }
         
 }
