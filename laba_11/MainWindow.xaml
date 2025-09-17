@@ -6,7 +6,24 @@
         xmlns:local="clr-namespace:laba_11"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <UniformGrid Grid.Row="0" Columns="3">
+            <Button Click="DrawTriangle" Content="Произвольный треугольник" Style="{StaticResource BaseButtonStyle}"></Button>
+            <Button Content="Произвольный прямоугольник" Style="{StaticResource BaseButtonStyle}" Click="Button_Click"></Button>
+            <Button Content="Произвольный Кватрат" Style="{StaticResource BaseButtonStyle}"></Button>
+        </UniformGrid>
+        <UniformGrid Grid.Row="1" Rows="2" Columns="2">
+            <TextBlock Text="Сдвиг по X:" Style="{StaticResource NameSpaceTextBlockStyle}"></TextBlock>
+            <Slider Value="{Binding Path=X}"></Slider>
+            <TextBlock Text="Сдвиг по Y:" Style="{StaticResource NameSpaceTextBlockStyle}"></TextBlock>
+            <Slider></Slider>
+        </UniformGrid>
+        <Canvas Grid.Row="2" x:Name="Scene" Height="400" Margin="15,0,0,0" VerticalAlignment="Center" Width="680"/>
     </Grid>
 </Window>
