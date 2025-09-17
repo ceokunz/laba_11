@@ -14,7 +14,7 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <UniformGrid Grid.Row="0" Columns="3">
-            <Button Click="DrawTriangle" Content="Произвольный треугольник" Style="{StaticResource BaseButtonStyle}"></Button>
+            <Button Click="DrawTriangle1" Content="Произвольный треугольник" Style="{StaticResource BaseButtonStyle}"></Button>
             <Button Content="Произвольный прямоугольник" Style="{StaticResource BaseButtonStyle}" Click="Button_Click"></Button>
             <Button Content="Произвольный Кватрат" Style="{StaticResource BaseButtonStyle}"></Button>
         </UniformGrid>

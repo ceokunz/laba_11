@@ -24,12 +24,10 @@ namespace laba_11
         {
             InitializeComponent();
             Point2D p1 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
-            Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0,
-           (int)Scene.Height));
-            Point2D p3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0,
-           (int)Scene.Height));
-            Point2D p4 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0,
-           (int)Scene.Height));
+            Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p4 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+
             tr = new Triangle(p1, p2, p3);
             rc = new Rectangle(p1, p2, p3, p4);
         }
@@ -69,7 +67,7 @@ namespace laba_11
 
         private void DrawTriangle1(object sender, RoutedEventArgs e)
         {
-            DrawTriangle();
+            DrawTriangle(tr);
         }
 
     }
