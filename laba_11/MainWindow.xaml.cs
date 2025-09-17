@@ -70,6 +70,21 @@ namespace laba_11
             DrawTriangle(tr);
         }
 
+        private void Slider_ValueChanged_1(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            double i = e.OldValue - e.NewValue;
+            Scene.Children.Clear();
+            tr.addX((int)(i*-10));
+            DrawTriangle(tr);
+        }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            double i = e.OldValue - e.NewValue;
+            Scene.Children.Clear();
+            tr.addY((int)(i * -10));
+            DrawTriangle(tr);
+        }
     }
         
 }

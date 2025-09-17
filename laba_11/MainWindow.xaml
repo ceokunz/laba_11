@@ -15,14 +15,14 @@
         </Grid.RowDefinitions>
         <UniformGrid Grid.Row="0" Columns="3">
             <Button Click="DrawTriangle1" Content="Произвольный треугольник" Style="{StaticResource BaseButtonStyle}"></Button>
-            <Button Content="Произвольный прямоугольник" Style="{StaticResource BaseButtonStyle}" Click="Button_Click"></Button>
-            <Button Content="Произвольный Кватрат" Style="{StaticResource BaseButtonStyle}"></Button>
+            <!--<Button Content="Произвольный прямоугольник" Style="{StaticResource BaseButtonStyle}" Click="Button_Click"></Button>-->
+            <!--<Button Content="Произвольный Кватрат" Style="{StaticResource BaseButtonStyle}" Click="Button_Click"></Button>-->
         </UniformGrid>
         <UniformGrid Grid.Row="1" Rows="2" Columns="2">
             <TextBlock Text="Сдвиг по X:" Style="{StaticResource NameSpaceTextBlockStyle}"></TextBlock>
-            <Slider Value="{Binding Path=X}"></Slider>
+            <Slider Minimum="-100" Maximum="100" ValueChanged="Slider_ValueChanged_1"></Slider>
             <TextBlock Text="Сдвиг по Y:" Style="{StaticResource NameSpaceTextBlockStyle}"></TextBlock>
-            <Slider></Slider>
+            <Slider Minimum="-100" Maximum="100" ValueChanged="Slider_ValueChanged"></Slider>
         </UniformGrid>
         <Canvas Background="LightBlue" Grid.Row="2" x:Name="Scene" Height="400" Margin="15,0,0,0" VerticalAlignment="Center" Width="680"/>
     </Grid>

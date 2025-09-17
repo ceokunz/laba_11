@@ -40,7 +40,7 @@ namespace laba_11
         //{
         //    if (PropertyChanged != null)
         //        PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        //} ну вобщем это тоже хз не уверен
+        //} //ну вобщем это тоже хз не уверен
 
         public Point2D(int x, int y)
         {
