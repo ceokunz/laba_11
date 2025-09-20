@@ -23,7 +23,7 @@ namespace laba_11
 
         public MainWindow()
         {
-            InitializeComponent();     
+            InitializeComponent();
 
             Point2D p1 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
             Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
@@ -90,10 +90,14 @@ namespace laba_11
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             double i = e.OldValue - e.NewValue;
-            Scene.Children.Clear();
-            tr.addY((int)(i * -10));
-            DrawTriangle(tr);
+            ClearScene();
+
+            if (currentShape is Triangle triangle)
+            {
+                triangle.addY((int)(i * 10));
+                DrawTriangle(triangle);
+            }
         }
+
     }
-        
 }

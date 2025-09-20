@@ -24,24 +24,6 @@ namespace laba_11
             set; 
         }
 
-        //get
-        //    {
-        //        return x;
-        //    }
-        //set
-        //    {
-        //        x = value;
-        //        OnPropertyChanged(nameof(X)); ???????? 
-        //}
-
-        //public event PropertyChangedEventHandler PropertyChanged;
-
-        //public void OnPropertyChanged([CallerMemberName] string prop = "")
-        //{
-        //    if (PropertyChanged != null)
-        //        PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        //} //ну вобщем это тоже хз не уверен
-
         public Point2D(int x, int y)
         {
             this.X = x;
