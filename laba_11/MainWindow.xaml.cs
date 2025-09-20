@@ -92,8 +92,8 @@ namespace laba_11
             {
                 rectangle.addX((int)(i * -10));
                 DrawRectangle(rectangle);
-            else if (currentShape is Triangle triangle)
             }
+            else if (currentShape is Triangle triangle)
             {
                 triangle.addX((int)(i * -10));
                 DrawTriangle(triangle);
