@@ -19,10 +19,12 @@ namespace laba_11
         private Random rnd = new Random();
         private Triangle tr;
         private Rectangle rc;
+        private IShape currentShape;
 
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();     
+
             Point2D p1 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
             Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
             Point2D p3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
@@ -67,15 +69,22 @@ namespace laba_11
 
         private void DrawTriangle1(object sender, RoutedEventArgs e)
         {
-            DrawTriangle(tr);
+            ClearScene();
+            tr.Draw(this);
+            currentShape = tr;
         }
 
         private void Slider_ValueChanged_1(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+            if (currentShape == null) return;
+
             double i = e.OldValue - e.NewValue;
-            Scene.Children.Clear();
-            tr.addX((int)(i*-10));
-            DrawTriangle(tr);
+            ClearScene();
+            if (currentShape is Triangle triangle)
+            {
+                triangle.addX((int)(i * -10));
+                DrawTriangle(triangle);
+            }
         }
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
