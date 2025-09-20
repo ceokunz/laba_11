@@ -24,6 +24,7 @@ namespace laba_11
         public MainWindow()
         {
             InitializeComponent();
+
             Point2D p1 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
             Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
             Point2D p3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
@@ -55,7 +56,7 @@ namespace laba_11
 
         public void ClearScene()
         {
-            //Scene.Children.Clear();
+            Scene.Children.Clear();
         }
 
         public void DrawRectangle(Rectangle rc)
@@ -69,12 +70,11 @@ namespace laba_11
         private void DrawTriangle1(object sender, RoutedEventArgs e)
         {
             ClearScene();
-            //tr.Draw(this);
-            //currentShape = tr;
-
-        }
-
-        private void DrawRectangle(object sender, RoutedEventArgs e)
+            tr.Draw(this);
+            currentShape = tr;
+            }
+            
+        private void DrawRectangle1(object sender, RoutedEventArgs e)
         {
             ClearScene();
             rc.Draw(this);
@@ -87,10 +87,16 @@ namespace laba_11
 
             double i = e.OldValue - e.NewValue;
             ClearScene();
+            
             if (currentShape is Rectangle rectangle)
             {
                 rectangle.addX((int)(i * -10));
                 DrawRectangle(rectangle);
+            else if (currentShape is Triangle triangle)
+            }
+            {
+                triangle.addX((int)(i * -10));
+                DrawTriangle(triangle);
             }
         }
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -104,8 +110,12 @@ namespace laba_11
                 DrawRectangle(rectangle);
 
             }
+            else if (currentShape is Triangle triangle)
+            {
+                triangle.addY((int)(i * 10));
+                DrawTriangle(triangle);
+            }
         }
         
     }
-        
 }

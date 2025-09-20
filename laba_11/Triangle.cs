@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace laba_11
 {
-    public class Triangle
+    public class Triangle : IShape
     {
         private Point2D p1;
         private Point2D p2;
@@ -41,6 +41,21 @@ namespace laba_11
             p1.addY(y);
             p2.addY(y);
             p3.addY(y);
+        }
+
+        public void MoveX(int dx)
+        {
+            addX(dx);
+        }
+
+        public void MoveY(int dy)
+        {
+            addY(dy);
+        }
+
+        public void Draw(MainWindow window)
+        {
+            window.DrawTriangle(this);
         }
 
     }

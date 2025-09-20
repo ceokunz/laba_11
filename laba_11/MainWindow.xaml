@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:laba_11"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="800" Width="800">
         
     <Grid Margin="20">
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition Height="0.3*"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <UniformGrid Grid.Row="0" Columns="3">
@@ -20,10 +20,10 @@
         </UniformGrid>
         <UniformGrid Grid.Row="1" Rows="2" Columns="2">
             <TextBlock Text="Сдвиг по X:" Style="{StaticResource NameSpaceTextBlockStyle}"></TextBlock>
-            <Slider Value="{Binding Path=X}"  Minimum="100" Maximum="100" ValueChanged="Slider_ValueChanged_1"></Slider>
+            <Slider Minimum="-100" Maximum="100" ValueChanged="Slider_ValueChanged_1"></Slider>
             <TextBlock Text="Сдвиг по Y:" Style="{StaticResource NameSpaceTextBlockStyle}"></TextBlock>
-            <Slider ValueChanged="Slider_ValueChanged" Minimum="100" Maximum="100"/>
+            <Slider Minimum="-100" Maximum="100" ValueChanged="Slider_ValueChanged"></Slider>
         </UniformGrid>
-        <Canvas Grid.Row="2" x:Name="Scene" Height="400" Margin="15,0,0,0" VerticalAlignment="Center" Width="680"/>
+        <Canvas Background="LightBlue" Grid.Row="2" x:Name="Scene" Height="400" Margin="15,0,0,0" VerticalAlignment="Center" Width="680"/>
     </Grid>
 </Window>
