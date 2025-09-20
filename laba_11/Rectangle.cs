@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace laba_11
 {
-    public class Rectangle
+    public class Rectangle : IShape
     {
         private Point2D p1;
         private Point2D p2;
@@ -23,7 +23,6 @@ namespace laba_11
         {
             return p1;
         }
-        
         public Point2D getP2()
         {
             return p2;
@@ -36,7 +35,6 @@ namespace laba_11
         {
             return p4;
         }
-
         public void addX(int X)
         {
             p1.addX(X);
@@ -44,7 +42,6 @@ namespace laba_11
             p3.addX(X);
             p4.addX(X);
         }
-
         public void addY(int Y)
         {
             p1.addY(Y);
@@ -52,5 +49,18 @@ namespace laba_11
             p3.addY(Y);
             p4.addY(Y);
         }
+        public void MoveX(int dx)
+        {
+            addX(dx);
+        }
+        public void MoveY(int dy)
+        {
+            addY(dy);
+        }
+        public void Draw(MainWindow window)
+        {
+            window.DrawRectangle(this);
+        }
+        
     }
 }

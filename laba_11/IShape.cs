@@ -12,4 +12,5 @@ namespace laba_11
         void MoveY(int dy);
         void Draw(MainWindow window);
     }
+
 }
