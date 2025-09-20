@@ -24,14 +24,6 @@ namespace laba_11
         public MainWindow()
         {
             InitializeComponent();
-
-            Point2D p1 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
-            Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
-            Point2D p3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
-            Point2D p4 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
-
-            tr = new Triangle(p1, p2, p3);
-            rc = new Rectangle(p1, p2, p3, p4);
         }
 
         public void DrawLine(Point2D p1, Point2D p2)
@@ -69,13 +61,31 @@ namespace laba_11
 
         private void DrawTriangle1(object sender, RoutedEventArgs e)
         {
+            Point2D p1 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+
+            tr = new Triangle(p1, p2, p3);
+
             ClearScene();
             tr.Draw(this);
             currentShape = tr;
-            }
+        }
             
         private void DrawRectangle1(object sender, RoutedEventArgs e)
         {
+            int x = rnd.Next(0, (int)Scene.Width);
+            int y = rnd.Next(0, (int)Scene.Height);
+            int width = rnd.Next(1, 200);
+            int height = rnd.Next(1, 200);
+
+            Point2D p1 = new Point2D(x, y);
+            Point2D p2 = new Point2D(x + width, y);
+            Point2D p3 = new Point2D(x + width, y + height);
+            Point2D p4 = new Point2D(x, y + height);
+
+            rc = new Rectangle(p1, p2, p3, p4);
+
             ClearScene();
             rc.Draw(this);
             currentShape = rc;
