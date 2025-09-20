@@ -97,35 +97,20 @@ namespace laba_11
 
             double i = e.OldValue - e.NewValue;
             ClearScene();
-            
-            if (currentShape is Rectangle rectangle)
-            {
-                rectangle.addX((int)(i * -10));
-                DrawRectangle(rectangle);
-            }
-            else if (currentShape is Triangle triangle)
-            {
-                triangle.addX((int)(i * -10));
-                DrawTriangle(triangle);
-            }
+
+            currentShape.MoveX((int)(i * -10));
+            currentShape.Draw(this);
         }
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+            if (currentShape == null) return;
+
             double i = e.OldValue - e.NewValue;
             ClearScene();
 
-            if (currentShape is Rectangle rectangle)
-            {
-                rectangle.addY((int)(i * 10));
-                DrawRectangle(rectangle);
-
-            }
-            else if (currentShape is Triangle triangle)
-            {
-                triangle.addY((int)(i * 10));
-                DrawTriangle(triangle);
-            }
+            currentShape.MoveY((int)(i * 10));
+            currentShape.Draw(this);
+        }
         }
         
     }
-}
