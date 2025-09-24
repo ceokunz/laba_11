@@ -19,6 +19,7 @@ namespace laba_11
         private Random rnd = new Random();
         private Triangle tr;
         private Rectangle rc;
+        private Square sq;
         private IShape currentShape;
 
         public MainWindow()
@@ -59,6 +60,14 @@ namespace laba_11
             DrawLine(rc.getP4(), rc.getP1());
         }
 
+        public void DrawSquare(Square sq)
+        {
+            DrawLine(sq.getP1(), sq.getP2());
+            DrawLine(sq.getP2(), sq.getP3());
+            DrawLine(sq.getP3(), sq.getP4());
+            DrawLine(sq.getP4(), sq.getP1());
+        }
+
         private void DrawTriangle1(object sender, RoutedEventArgs e)
         {
             Point2D p1 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
@@ -90,6 +99,25 @@ namespace laba_11
             rc.Draw(this);
             currentShape = rc;
         }
+
+        private void DrawSquare1(object sender, RoutedEventArgs e)
+        {
+            int x = rnd.Next(0, (int)Scene.Width);
+            int y = rnd.Next(0, (int)Scene.Height);
+            int width = rnd.Next(1, 200);
+
+            Point2D p1 = new Point2D(x, y);
+            Point2D p2 = new Point2D(x + width, y);
+            Point2D p3 = new Point2D(x + width, y + width);
+            Point2D p4 = new Point2D(x, y + width);
+
+            sq = new Square(p1, p2, p3, p4);
+
+            ClearScene();
+            sq.Draw(this);
+            currentShape = sq;
+        }
+
 
         private void Slider_ValueChanged_1(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
